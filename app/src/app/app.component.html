@@ -6,35 +6,40 @@
       <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
           <ng-template matStepLabel>Covid first human cases on Countries</ng-template>
-          <div class="align-items-center justify-content-center d-flex bg-dark">
-            <app-geochart-day-covid-country
-            style="width: 60% !important;"
-            ></app-geochart-day-covid-country>
-          </div>
-          <mat-form-field class="align-items-center justify-content-center d-flex">
-            <label>Which country had the first covid case related ?</label>
+          <div class="bg-info">
+          <mat-form-field
+            class="align-items-center justify-content-center d-flex w-100"
+          >
+            <label
+              class="text-light"
+              style="width: 500px">Which country had the first covid case related ?</label>
             <input
-              style="width: 1000px !important;"
+              style="width: 500px !important;"
               matInput formControlName="firstCtrl" required>
           </mat-form-field>
           <div class="align-items-center justify-content-center d-flex">
             <button mat-button matStepperNext class="btn btn-primary">Next</button>
           </div>
+          </div>
+          <div class="align-items-center justify-content-center d-flex">
+            <app-geochart-day-covid-country
+            style="width: 60% !important;"
+            ></app-geochart-day-covid-country>
+          </div>
+
         </form>
       </mat-step>
       <mat-step [stepControl]="secondFormGroup"
                 label="Covid first human cases on Brazil states">
         <form [formGroup]="secondFormGroup">
-          <div class="align-items-center justify-content-center d-flex bg-dark">
-            <app-geochart-covid-states-brazil
-              style="width: 60% !important;"
-            ></app-geochart-covid-states-brazil>
-          </div>
-
+          <div class="bg-info">
           <mat-form-field class="align-items-center justify-content-center d-flex">
-            <label>Which state had the first covid case related ?</label>
+            <label
+              class="text-light"
+              style="width: 500px"
+            >Which state had the first covid case related ?</label>
             <input
-              style="width: 1000px !important;"
+              style="width: 500px !important;"
               matInput formControlName="secondCtrl" required>
           </mat-form-field>
           <div
@@ -45,6 +50,44 @@
             <button
               class="btn btn-primary"
               mat-button matStepperNext>Next</button>
+          </div>
+          </div>
+          <div class="align-items-center justify-content-center d-flex ">
+            <app-geochart-covid-states-brazil
+              style="width: 60% !important;"
+            ></app-geochart-covid-states-brazil>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="thirdFormGroup"
+                label="Covid along continents">
+        <form [formGroup]="thirdFormGroup">
+          <div class="bg-info">
+            <mat-form-field
+              class="align-items-center justify-content-center d-flex w-100">
+              <label
+                class="text-light"
+                style="width: 500px">According with these graphs you think
+                that countries with similar economics conditions
+                show similar evolution pattern of COVID-19?</label>
+              <input
+                style="width: 500px !important;"
+                matInput formControlName="thirdCtrl" required>
+            </mat-form-field>
+            <div
+              class="align-items-center justify-content-center d-flex">
+              <button
+                class="btn btn-light"
+                mat-button matStepperPrevious>Back</button>
+              <button
+                class="btn btn-primary"
+                mat-button matStepperNext>Next</button>
+            </div>
+          </div>
+          <div class="align-items-center justify-content-center d-flex ">
+            <app-linechart-continents
+              style="width: 60% !important;">
+            </app-linechart-continents>
           </div>
         </form>
       </mat-step>

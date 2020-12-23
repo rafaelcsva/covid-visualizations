@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
   isLinear = true;
   firstFormGroup: FormGroup = new FormGroup({});
   secondFormGroup: FormGroup = new FormGroup({});
+  thirdFormGroup: FormGroup = new FormGroup({});
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -34,6 +35,9 @@ export class AppComponent implements OnInit {
     });
     this.secondFormGroup = this.formBuilder.group({
       secondCtrl: ['', Validators.required]
+    });
+    this.thirdFormGroup = this.formBuilder.group({
+      thirdCtrl: ['', Validators.required]
     });
   }
 }

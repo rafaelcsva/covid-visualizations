@@ -1,0 +1,35 @@
+
+<div class="container-fluid">
+<form (ngSubmit)="filter(minIdh, maxIdh)">
+  <div class="row justify-content-center  align-items-center d-flex">
+    <div class="col justify-content-center  align-items-center d-flex">
+      <label class="text-dark">Menor IDH</label>
+      <input class="form-control"
+             name="minIdh"
+             [(ngModel)]="minIdh"
+             type="number" placeholder="idh menor que">
+    </div>
+    <div class="col justify-content-center  align-items-center d-flex">
+      <label class="text-dark">Maior IDH</label>
+      <input class="form-control"
+             name="maxIdh"
+             [(ngModel)]="maxIdh"
+             type="number" placeholder="idh maior que">
+    </div>
+    <div class="w-100"></div>
+    <div class="col justify-content-center  align-items-center d-flex">
+      <button class="btn btn-primary btn-lg" type="submit">Filtrar</button>
+    </div>
+  </div>
+</form>
+<google-chart
+  class="w-100 align-items-center justify-content-center d-flex"
+  [type]="Linechart"
+  [data]="data"
+  [columns]="columns"
+  [title]="title"
+  [options]="options"
+>
+</google-chart>
+
+</div>
