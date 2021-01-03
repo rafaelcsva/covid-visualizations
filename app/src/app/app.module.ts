@@ -12,6 +12,8 @@ import { GeochartDayCovidCountryComponent } from './geochart-day-covid-country/g
 import { GeochartCovidStatesBrazilComponent } from './geochart-covid-states-brazil/geochart-covid-states-brazil.component';
 import { LinechartCasesMillionComponent } from './linechart-cases-million/linechart-cases-million.component';
 import { LinechartContinentsComponent } from './linechart-continents/linechart-continents.component';
+import { LinechartDeathsComponent } from './linechart-deaths/linechart-deaths.component';
+import { GeochartCovidDeathsStateBrazilComponent } from './geochart-covid-deaths-state-brazil/geochart-covid-deaths-state-brazil.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { LinechartContinentsComponent } from './linechart-continents/linechart-c
     GeochartDayCovidCountryComponent,
     GeochartCovidStatesBrazilComponent,
     LinechartCasesMillionComponent,
-    LinechartContinentsComponent
+    LinechartContinentsComponent,
+    LinechartDeathsComponent,
+    GeochartCovidDeathsStateBrazilComponent
   ],
     imports: [
         BrowserModule,

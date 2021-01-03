@@ -12,7 +12,7 @@
           >
             <label
               class="text-light"
-              style="width: 500px">Which country had the first covid case related ?</label>
+              style="width: 500px">Whats the gap (in days) between the first case on Russia and Brazil ?</label>
             <input
               style="width: 500px !important;"
               matInput formControlName="firstCtrl" required>
@@ -30,7 +30,7 @@
         </form>
       </mat-step>
       <mat-step [stepControl]="secondFormGroup"
-                label="Covid first human cases on Brazil states">
+                label="first case along Brazil states">
         <form [formGroup]="secondFormGroup">
           <div class="bg-info">
           <mat-form-field class="align-items-center justify-content-center d-flex">
@@ -60,7 +60,7 @@
         </form>
       </mat-step>
       <mat-step [stepControl]="thirdFormGroup"
-                label="Covid along continents">
+                label="along continents">
         <form [formGroup]="thirdFormGroup">
           <div class="bg-info">
             <mat-form-field
@@ -88,6 +88,67 @@
             <app-linechart-continents
               style="width: 60% !important;">
             </app-linechart-continents>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="fourthFormGroup"
+                label="death rate">
+        <form [formGroup]="fourthFormGroup">
+          <div class="bg-info">
+            <mat-form-field
+              class="align-items-center justify-content-center d-flex w-100">
+              <label
+                class="text-light"
+                style="width: 500px">Looking at this graph below, how you describe the death rate along the days ?
+                did it increased ?</label>
+              <input
+                style="width: 500px !important;"
+                matInput formControlName="fourthCtrl" required>
+            </mat-form-field>
+            <div
+              class="align-items-center justify-content-center d-flex">
+              <button
+                class="btn btn-light"
+                mat-button matStepperPrevious>Back</button>
+              <button
+                class="btn btn-primary"
+                mat-button matStepperNext>Next</button>
+            </div>
+          </div>
+          <div class="align-items-center justify-content-center d-flex ">
+            <app-linechart-deaths
+              style="width: 60% !important;">
+            </app-linechart-deaths>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="fifthFormGroup"
+                label="Brazil state deaths">
+        <form [formGroup]="fifthFormGroup">
+          <div class="bg-info">
+            <mat-form-field
+              class="align-items-center justify-content-center d-flex w-100">
+              <label
+                class="text-light"
+                style="width: 500px">Looking at this graph below, Did the death rate tends dto be equal accordingly with the regions (Centerwest, Southeast, Northeast, North and South) ? </label>
+              <input
+                style="width: 500px !important;"
+                matInput formControlName="fifthCtrl" required>
+            </mat-form-field>
+            <div
+              class="align-items-center justify-content-center d-flex">
+              <button
+                class="btn btn-light"
+                mat-button matStepperPrevious>Back</button>
+              <button
+                class="btn btn-primary"
+                mat-button matStepperNext>Next</button>
+            </div>
+          </div>
+          <div class="align-items-center justify-content-center d-flex ">
+            <app-geochart-covid-deaths-state-brazil
+              style="width: 60% !important;">
+            </app-geochart-covid-deaths-state-brazil>
           </div>
         </form>
       </mat-step>

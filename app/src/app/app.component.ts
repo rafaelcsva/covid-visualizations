@@ -26,6 +26,8 @@ export class AppComponent implements OnInit {
   firstFormGroup: FormGroup = new FormGroup({});
   secondFormGroup: FormGroup = new FormGroup({});
   thirdFormGroup: FormGroup = new FormGroup({});
+  fourthFormGroup: FormGroup = new FormGroup({});
+  fifthFormGroup: FormGroup = new FormGroup({});
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -38,6 +40,12 @@ export class AppComponent implements OnInit {
     });
     this.thirdFormGroup = this.formBuilder.group({
       thirdCtrl: ['', Validators.required]
+    });
+    this.fourthFormGroup = this.formBuilder.group({
+      fourthCtrl: ['', Validators.required]
+    });
+    this.fifthFormGroup = this.formBuilder.group({
+      fifthCtrl: ['', Validators.required]
     });
   }
 }
