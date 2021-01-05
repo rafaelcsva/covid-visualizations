@@ -155,7 +155,7 @@
       <mat-step>
         <ng-template matStepLabel>Done</ng-template>
         <p>You are now done.</p>
-        <div class="align-items-center justify-content-center d-flex">
+        <div class="align-items-center justify-content-center d-flex" *ngIf="!done">
           <button
             [disabled]="load"
             mat-button matStepperPrevious class="btn btn-danger">Back</button>
@@ -168,6 +168,9 @@
         </div>
         <div class="align-items-center justify-content-center d-flex" *ngIf="load">
           <mat-spinner></mat-spinner>
+        </div>
+        <div class="align-items-center justify-content-center d-flex" *ngIf="done">
+          Thanks for answering!
         </div>
       </mat-step>
     </mat-horizontal-stepper>

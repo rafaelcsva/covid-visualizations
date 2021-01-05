@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {EmailService} from './email.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -16,8 +17,10 @@ export class AppComponent implements OnInit {
   fourthFormGroup: FormGroup = new FormGroup({});
   fifthFormGroup: FormGroup = new FormGroup({});
   load = false;
+  done = false;
 
-  constructor(private formBuilder: FormBuilder, private emailService: EmailService) {}
+  constructor(private formBuilder: FormBuilder, private emailService: EmailService,
+              private router: Router) {}
 
   ngOnInit(): void {
     this.firstFormGroup = this.formBuilder.group({
@@ -47,7 +50,8 @@ export class AppComponent implements OnInit {
     this.load = true;
     this.emailService.sendEmail(this.getAllAnswer()).subscribe(
       (data) => {
-
+        this.router.navigate(['/greetings']);
+        this.done = true;
       }, (error) => {
 
       }, () => {
