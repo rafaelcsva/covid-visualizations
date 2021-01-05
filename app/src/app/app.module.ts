@@ -14,6 +14,8 @@ import { LinechartCasesMillionComponent } from './linechart-cases-million/linech
 import { LinechartContinentsComponent } from './linechart-continents/linechart-continents.component';
 import { LinechartDeathsComponent } from './linechart-deaths/linechart-deaths.component';
 import { GeochartCovidDeathsStateBrazilComponent } from './geochart-covid-deaths-state-brazil/geochart-covid-deaths-state-brazil.component';
+import {HttpClientModule} from "@angular/common/http";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { GeochartCovidDeathsStateBrazilComponent } from './geochart-covid-deaths
         ReactiveFormsModule,
         MatInputModule,
         FormsModule,
+        HttpClientModule,
+        MatProgressSpinnerModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

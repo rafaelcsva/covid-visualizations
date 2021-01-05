@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import { ChartType } from 'angular-google-charts';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {EmailService} from './email.service';
 
 @Component({
   selector: 'app-root',
@@ -8,28 +8,16 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  data = [
-    ['Germany', new Date().getDate()],
-    ['United States', new Date().getDate()],
-    ['Brazil', new Date().getDate()],
-    ['Canada', new Date().getDate()],
-    ['France', new Date().getDate()],
-    ['Russia', new Date().getDate()],
-    ['Afghanistan', new Date().getDate()],
-    ['Antigua and Barbuda', new Date().getDate()],
-    ['Armenia', new Date().getSeconds()]
-  ];
-  columns = ['Country', 'Popularity'];
-  Geochart = ChartType.GeoChart;
-  title = 'app';
+  title = 'covid visualizations';
   isLinear = true;
   firstFormGroup: FormGroup = new FormGroup({});
   secondFormGroup: FormGroup = new FormGroup({});
   thirdFormGroup: FormGroup = new FormGroup({});
   fourthFormGroup: FormGroup = new FormGroup({});
   fifthFormGroup: FormGroup = new FormGroup({});
+  load = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private emailService: EmailService) {}
 
   ngOnInit(): void {
     this.firstFormGroup = this.formBuilder.group({
@@ -47,5 +35,24 @@ export class AppComponent implements OnInit {
     this.fifthFormGroup = this.formBuilder.group({
       fifthCtrl: ['', Validators.required]
     });
+  }
+
+  getAllAnswer(): string{
+    return `1) ${this.firstFormGroup.value.firstCtrl}<br>2) ${this.secondFormGroup.value.secondCtrl}<br>3) ${this.thirdFormGroup.value.thirdCtrl}<br>4) ${this.fourthFormGroup.value.fourthCtrl}<br>5) ${this.fifthFormGroup.value.fifthCtrl}`;
+  }
+
+  sendAnswers(): void {
+    if (this.load) { return; }
+
+    this.load = true;
+    this.emailService.sendEmail(this.getAllAnswer()).subscribe(
+      (data) => {
+
+      }, (error) => {
+
+      }, () => {
+        this.load = false;
+      }
+    );
   }
 }
