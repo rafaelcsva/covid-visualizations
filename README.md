@@ -1,5 +1,5 @@
 # covid-visualizations
-This repository host the final work on information visualization discipline.
+This repository host the final work of info visualization discipline.
 
 ## Objective
 Build visualization with covid-19 data to answer the followings questions:
@@ -12,9 +12,12 @@ Build visualization with covid-19 data to answer the followings questions:
 ## Dataset
 We've used the followings datasets:
 
-1. https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv (1, 3)
-1. https://github.com/owid/covid-19-data/tree/master/public/data (2)
-1. https://brasil.io/dataset/covid19/caso_full/ (1, 4)
+1. https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv
+1. https://github.com/owid/covid-19-data/tree/master/public/data
+1. https://brasil.io/dataset/covid19/caso_full/
 
 ### Technologies
 We've used python [pandas](https://pandas.pydata.org/docs/getting_started/index.html) lib to extract information from the datasets, and [Angular](https://angular.io/) to build the visualizations.
+
+#### Website hosting
+The site are hosted for free by [000webhost](https://www.000webhost.com/).
