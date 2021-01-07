@@ -2,25 +2,28 @@
 <div class="container-fluid">
 <form (ngSubmit)="filter(minIdh, maxIdh)">
   <div class="row justify-content-center  align-items-center d-flex">
+    <p>HDI: Human Development Index</p>
     <div class="col justify-content-center  align-items-center d-flex">
-      <label class="text-dark">Menor IDH</label>
+      <label class="text-dark">Lesser HDI</label>
       <input class="form-control"
              name="minIdh"
              [(ngModel)]="minIdh"
-             type="number" placeholder="idh menor que">
+             type="number" placeholder="HDI less than">
     </div>
     <div class="col justify-content-center  align-items-center d-flex">
-      <label class="text-dark">Maior IDH</label>
+      <label class="text-dark">Greater HDI</label>
       <input class="form-control"
              name="maxIdh"
              [(ngModel)]="maxIdh"
-             type="number" placeholder="idh maior que">
+             type="number" placeholder="HDI greater than">
     </div>
     <div class="w-100"></div>
     <div class="col justify-content-center  align-items-center d-flex">
-      <button class="btn btn-primary btn-lg" type="submit">Filtrar</button>
+      <button class="btn btn-primary btn-lg" type="submit">Filter</button>
     </div>
   </div>
+  <p>Considered countries (: {{totalCountries}}</p>
+  <p *ngIf="erro" class="text-danger">No countries in this range</p>
 </form>
 <google-chart
   class="w-100 align-items-center justify-content-center d-flex"
