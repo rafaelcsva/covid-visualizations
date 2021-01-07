@@ -19,7 +19,7 @@ export class LinechartContinentsComponent implements OnInit {
     title: `Statistics deaths per million on each country along the days`,
     hAxis: {title: 'Mean'},
     vAxis: {title: 'Standard Deviation'},
-    bubble: {textStyle: {fontSize: 11}},
+    bubble: {textStyle: {fontSize: 8}},
   };
   maxIdh = 1000;
   minIdh = 900;
@@ -53,14 +53,14 @@ export class LinechartContinentsComponent implements OnInit {
     // tmp.countries = tmp.countries.map((obj: any[]) => obj[0]);
     this.totalCountries = tmp.countries.length;
 
-    this.columns = ['ID', 'Mean Daily Infected', 'Standard Deviation Daily Infected', 'HDI'];
+    this.columns = ['ID', 'Mean Daily Deaths', 'Standard Deviation Daily Deaths', 'HDI', 'SIZE'];
       // tslint:disable-next-line:prefer-for-of
     for (let i = 0 ; i < tmp.countries.length ; i++){
       const c = tmp.countries[i][0];
       const hdi = tmp.countries[i][1];
       // console.log(c);
       this.data.push([c, this.serie.evolution[c][0],
-        Math.sqrt(this.serie.evolution[c][1]), hdi]);
+        Math.sqrt(this.serie.evolution[c][1]), hdi, 1]);
     }
     // console.log(this.serie);
   }
